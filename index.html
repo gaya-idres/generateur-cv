@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>📝 Générateur de CV</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Formulaire à gauche -->
+    <div class="form-section">
+      <form id="cv-form">
+        <h1>📝 Générateur de CV</h1>
+
+        <h2>Informations personnelles</h2>
+        <label for="photo">Photo de profil :</label>
+        <input type="file" id="photo" accept="image/*" />
+
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" placeholder="Votre nom" required />
+
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" placeholder="Votre prénom" required />
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" placeholder="Votre email" />
+
+        <label for="telephone">Téléphone :</label>
+        <input type="tel" id="telephone" placeholder="Votre numéro" />
+
+        <h2>Profil</h2>
+        <label for="profil">Description :</label>
+        <textarea id="profil" placeholder="Décrivez votre profil professionnel"></textarea>
+
+        <h2>Formation</h2>
+        <label for="nb-formations">Nombre de formations :</label>
+        <input type="number" id="nb-formations" min="1" max="10" value="1" />
+
+        <div id="formation-container"></div>
+
+        <h2>Expériences</h2>
+        <label for="nb-experiences">Nombre d'expériences :</label>
+        <input type="number" id="nb-experiences" min="1" max="10" value="1" />
+
+        <div id="experience-container"></div>
+
+        <h2>Compétences</h2>
+        <label for="competences">Compétences :</label>
+        <textarea id="competences" placeholder="Listez vos compétences, séparées par des virgules"></textarea>
+
+        <button type="submit">Générer le CV</button>
+      </form>
+    </div>
+
+    <!-- Aperçu à droite -->
+    <div class="preview-section">
+      <div id="cv-preview"></div>
+      <button id="download-pdf" disabled>📥 Télécharger le CV en PDF</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
